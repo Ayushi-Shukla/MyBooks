@@ -1,0 +1,45 @@
+<div style="height: 80vh;">
+        <mat-toolbar style="background-color:indigo">
+          <mat-toolbar-row>
+            <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+              <mat-icon id="icon">menu</mat-icon>
+            </button>
+            <button mat-button [routerLink]="['/dashboard']" id="mybook">MyBooks</button>
+            <span class="menu-spacer"></span>
+            <div fxShow="true" fxHide.lt-md>
+            <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/dashboard']" id="homepage">Homepage</button>
+            <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [matMenuTriggerFor]="menu" id="menu">Menu
+            <mat-icon id="menuicon">more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" id="dropdownmenu">
+                <button mat-menu-item  [routerLink]="['/search']" id="searchbtn">Search books</button>
+                <button mat-menu-item [routerLink]="['/favourite']" id="favourite">My Favourite Books</button>
+            </mat-menu>  
+            <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button (click)="logout()" id="logout">Logout</button>
+            </div>
+            </mat-toolbar-row>
+            </mat-toolbar>
+      
+            <mat-sidenav-container fxFlexFill>
+            <mat-sidenav #sidenav style="width:150px; background-color: indigo">
+            <mat-nav-list>
+                    <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [routerLink]="['/dashboard']" id="homepage">Homepage</button>
+                    <button *ngIf="router.url !='/login' && router.url !='/register'" mat-button [matMenuTriggerFor]="menu" id="menu">Menu
+                    <mat-icon id="menuicon">more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button class="searchbtn" mat-menu-item [routerLink]="['/search']" id="searchbtn">Search books</button>
+                        <button mat-menu-item  [routerLink]="['/favourite']" id="favourite">My Favourite Books</button>
+                    </mat-menu>
+                    <button  *ngIf="router.url !='/login' && router.url !='/register'" mat-button (click)="logout()" id="logout">Logout</button>          
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content fxFlexFill>
+              <router-outlet></router-outlet>
+        </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+      <div class="footer">
+            <div class="copyright">All Copyrights © reserved with MyBooks - 2019</div>
+    </div>
+      

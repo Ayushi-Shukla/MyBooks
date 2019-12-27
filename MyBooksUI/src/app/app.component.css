@@ -1,0 +1,67 @@
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  #menuicon{
+    padding-left: 0;
+  }
+#mybook{
+  font-size: 20px; color: greenyellow
+}
+#mybook:hover{
+  color: red 
+}
+#icon{
+  color: greenyellow
+}
+#icon:hover{
+  color: red
+}
+#homepage{
+  color: greenyellow
+}
+#homepage:hover{
+  color: red
+}
+#menu{
+  color: greenyellow
+}
+#menu:hover{
+  color: red
+}
+#menuicon{
+  color: greenyellow
+}
+#menuicon:hover{
+  color:red
+}
+#searchbtn{
+  color: indigo
+}
+#searchbtn:hover{
+  color:black
+}
+#favourite{
+  color: indigo
+}
+#favourite:hover{
+  color:black
+}
+#logout{
+  color: greenyellow
+}
+#logout:hover{
+  color:red
+}
+#tool{
+  background-color: indigo
+}
+
+.footer{
+  left: 0; bottom: 0; width: 100%;  background-color:indigo;
+    color:greenyellow; text-align: center; height:45px;
+    position: fixed
+}
+
+ .menu-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,5 @@
+[2120:20804:0322/195930.614:ERROR:install_util.cc(691)] Failed to read HKLM\SOFTWARE\Policies\Google\Chrome\MachineLevelUserCloudPolicyEnrollmentToken: The system cannot find the file specified. (0x2)
+[2120:20804:0322/195930.618:ERROR:configuration_policy_handler_list.cc(91)] Unknown policy: PasswordManagerAllowShowPasswords
+[2120:20804:0322/195930.838:ERROR:configuration_policy_handler_list.cc(91)] Unknown policy: PasswordManagerAllowShowPasswords
+[2120:18808:0322/195930.871:WARNING:discovery_network_list_win.cc(195)] Failed to open Wlan client handle: 1062
+[2120:20804:0322/195932.360:ERROR:gpu_process_transport_factory.cc(980)] Lost UI shared context.

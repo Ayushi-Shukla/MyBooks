@@ -1,0 +1,25 @@
+<h1 style="text-align: center;color:grey">Your Favourite</h1>
+    <!--error handling-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4"></div>
+        <div class="col-12 col-lg-8 col-md-6 col-sm-4">
+          <div class="alert alert-primary mt-3 px-3 py-3" id="errorMessage" *ngIf="errorDiv">{{errorMessage}}</div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4"></div>
+      </div>
+    </div>
+
+            <div class="book-container">
+                <mat-card *ngFor="let book of bookList" class="book-thumbnail" id="book-thumbnail">
+                  <mat-card-header>
+                      <mat-card-title id="book-title"><h4>{{book.title}}</h4></mat-card-title>
+                      <mat-card-subtitle>Author: {{book.author_name}}</mat-card-subtitle>
+                  </mat-card-header>
+                  <mat-card-actions class="book-actions">
+                      <a href="http://openlibrary.org/isbn/029929204243" class="btn btn-primary" target="_blank">Read Book..</a>
+                      <button mat-raised-button color="warn" (click)="Remove(book)">Remove</button>
+                  </mat-card-actions>
+                </mat-card>
+                
+                </div>

@@ -1,0 +1,38 @@
+
+<div class="search-block">
+  <mat-form-field>
+      <mat-label>Search by category</mat-label>
+      <mat-select [(value)]="selected" id="selected">
+        <mat-option>None</mat-option>
+        <mat-option value="title" id="title">Title</mat-option>
+        <mat-option value="author" id="author">Author</mat-option>
+        <mat-option value="any">Any</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>Search category: {{selected}}</p>
+    <div class="flex-container">
+          <mat-form-field>
+            <input id="search-button-input" matInput type="text" #box (keyup.enter)="search(box.value)">
+            <mat-placeholder>Search</mat-placeholder>
+          </mat-form-field>
+    </div>
+    <div class="alert alert-danger mt-3" id="error" *ngIf="errorDiv">{{errorMessage}}</div>
+  </div>
+
+<!--search results cards-->
+<div *ngIf="afterSearch" class="book-container">
+    <mat-card *ngFor="let book of bookList" class="book-thumbnail" id="book-thumbnail">
+      <mat-card-header>
+          <mat-card-title id="book-title"><h4>{{book.title}}</h4></mat-card-title>
+          <mat-card-subtitle>Author: {{book.author_name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="book-image" mat-card-img src="http://covers.openlibrary.org/b/isbn/{{book.isbn[0]}}-L.jpg" alt="cover pic not available">
+      <mat-card-actions class="book-actions">
+          <a href="http://openlibrary.org/isbn/029929204243" class="btn btn-primary" target="_blank">Read Book..</a>
+          <button mat-raised-button color="primary" [ngStyle]="{'display':book.isFavourite?'block':'none'}" (click)="favourite(book)">Add to favourites</button>
+          <button button mat-raised-button disabled color="primary" [ngStyle]="{'display':!book.isFavourite?'block':'none'}" (click)="favourite(book)">In your favourite list</button>
+      </mat-card-actions>
+    </mat-card>
+    
+    </div>
+

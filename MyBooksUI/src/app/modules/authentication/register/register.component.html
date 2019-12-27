@@ -1,0 +1,48 @@
+<form class="register-form" #registerForm="ngForm" (ngSubmit)="registerUser()" [style.fontsize.px]="20">
+  <div class="register-block">
+    <div class="row">
+      <h3>Register User</h3>
+    </div>
+
+    <div class="container">
+    <div class="row">
+
+
+      <mat-form-field class="register-input-full-width" appearance="outline">
+          <mat-label>First name</mat-label>
+        <input id="firstName" matInput placeholder="First Name" [(ngModel)]="newUser.firstName" name="firstName" required minLength="5" maxlength="10">
+      </mat-form-field>
+
+
+      <mat-form-field class="register-input-full-width" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input id="lastName" matInput placeholder="Last Name" [(ngModel)]="newUser.lastName" name="lastName">
+      </mat-form-field>
+
+
+      <mat-form-field class="register-input-full-width" appearance="outline">
+          <mat-label>User Id</mat-label>
+          <input id="userId" matInput placeholder="User Id" [(ngModel)]="newUser.userId" name="userId" required minLength="5" maxlength="10" #userId="ngModel">
+          <mat-icon matSuffix><i class="material-icons">person</i></mat-icon>
+          <mat-hint>Your userid will be used to log in</mat-hint>
+      </mat-form-field>
+      
+      
+      <mat-form-field class="register-input-full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input TYPE="password" id="password" class="inputPass" matInput placeholder="Password" [(ngModel)]="newUser.password" name="password" required>
+        <mat-icon matSuffix><i class="material-icons">lock</i></mat-icon>
+      </mat-form-field>
+
+
+    </div>
+    <div class="row">
+      <button class="register-user" id="register-user" mat-raised-button color="primary" type="submit" (click)="registerUser()">Register</button>&nbsp;
+      <button mat-raised-button (click)="resetInput(registerForm)">Clear</button>
+    </div>
+    <div class="row">
+        <h6 style="font-size:17px; font-family:initial; margin-top: 30px">Already a member? <a routerLink="/login">Login </a>here!</h6>
+    </div>
+  </div>
+  </div>
+</form>
